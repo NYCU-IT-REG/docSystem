@@ -1,0 +1,387 @@
+/*
+ * NYCU Brand Colors - 陽明交大品牌色彩
+ * 主色：深藍色（群青）#0033a1
+ */
+
+/* Custom primary color for light mode */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0033a1;
+  --md-primary-fg-color--light: #1a4db8;
+  --md-primary-fg-color--dark: #002880;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #f5f5f7;
+}
+
+/* Custom primary color for dark mode */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1a4db8;
+  --md-primary-fg-color--light: #3366cc;
+  --md-primary-fg-color--dark: #0033a1;
+}
+
+/* Custom accent color for light mode - 使用較柔和的次級色 */
+[data-md-color-scheme="default"] {
+  --md-accent-fg-color: #1976d2;
+  --md-accent-fg-color--transparent: rgba(25, 118, 210, 0.1);
+  --md-accent-bg-color: #ffffff;
+  --md-accent-bg-color--light: #f5f5f7;
+}
+
+/* Custom accent color for dark mode - 使用較柔和的次級色 */
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #64b5f6;
+  --md-accent-fg-color--transparent: rgba(100, 181, 246, 0.1);
+}
+
+/* ============================================
+   Header 樣式 - 使用 NYCU 品牌色
+   ============================================ */
+.md-header {
+  background-color: #0033a1;
+}
+
+/* Header 中的連結和文字顏色 - 確保在深藍背景上清晰可見 */
+.md-header__title,
+.md-header__button,
+.md-header-nav__button {
+  color: #ffffff;
+}
+
+.md-header a {
+  color: #ffffff;
+}
+
+.md-header a:hover {
+  color: #e0e0e0;
+}
+
+/* 深色/淺色模式切換按鈕顏色 */
+.md-header__button.md-icon {
+  color: #ffffff;
+}
+
+.md-header__button.md-icon svg {
+  fill: #ffffff;
+}
+
+/* 搜尋框在 header 中的樣式 */
+.md-search__input {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: none !important;
+}
+
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 確保搜尋框在任何狀態下都不顯示錯誤邊框 */
+.md-search__input:invalid {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ============================================
+   Navigation Tabs 樣式
+   ============================================ */
+.md-tabs {
+  background-color: #0033a1;
+}
+
+/* Tabs 連結預設為白色，在深藍背景上清晰可見 */
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.md-tabs__link:hover {
+  color: #ffffff;
+}
+
+/* 活動中的 tab 使用更亮的白色和底線 */
+.md-tabs__link--active {
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* ============================================
+   Footer 前後文章導航樣式
+   ============================================ */
+
+/* Footer 整體背景色改為淺色 */
+.md-footer {
+  background-color: #f5f5f7;
+}
+
+/* Footer 導航背景色改為淺色，提升可讀性 */
+.md-footer__inner {
+  background-color: #f5f5f7;
+}
+
+/* Footer 連結使用 NYCU 品牌色，在淺色背景上清晰可見 */
+.md-footer__link {
+  color: #0033a1;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.md-footer__link:hover {
+  background-color: #e8eaf0;
+  color: #002880;
+}
+
+/* Footer 連結標題文字 */
+.md-footer__title {
+  color: #0033a1;
+}
+
+.md-footer__direction {
+  color: #666666;
+  font-size: 0.75rem;
+}
+
+/* Footer 箭頭圖示 */
+.md-footer__button svg {
+  fill: #0033a1;
+}
+
+/* Dark mode: footer theming */
+[data-md-color-scheme="slate"] .md-footer {
+  background-color: #0b1220; /* darker panel */
+}
+
+[data-md-color-scheme="slate"] .md-footer__inner {
+  background-color: transparent;
+}
+
+[data-md-color-scheme="slate"] .md-footer__link {
+  color: #9ec7ff; /* lighter accent for links */
+  background-color: transparent;
+}
+
+[data-md-color-scheme="slate"] .md-footer__link:hover {
+  color: #ffffff;
+  background-color: rgba(255,255,255,0.04);
+}
+
+[data-md-color-scheme="slate"] .md-footer__button svg {
+  fill: #9ec7ff;
+}
+
+[data-md-color-scheme="slate"] .md-footer-meta {
+  background-color: #071027; /* deep footer meta */
+}
+
+[data-md-color-scheme="slate"] .md-footer-meta__inner {
+  color: rgba(255,255,255,0.92);
+}
+
+[data-md-color-scheme="slate"] .md-footer-meta a {
+  color: #cfe6ff;
+}
+
+[data-md-color-scheme="slate"] .md-footer-meta a:hover {
+  color: #ffffff;
+}
+
+/* Improve overall text contrast in dark (slate) mode */
+[data-md-color-scheme="slate"] {
+  /* base text color for UI chrome */
+  color: #e6eef8;
+}
+
+[data-md-color-scheme="slate"] .md-typeset,
+[data-md-color-scheme="slate"] .md-content,
+[data-md-color-scheme="slate"] .md-nav,
+[data-md-color-scheme="slate"] .md-footer,
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-footer-meta__inner {
+  color: #e6eef8;
+}
+
+[data-md-color-scheme="slate"] p,
+[data-md-color-scheme="slate"] li,
+[data-md-color-scheme="slate"] .md-typeset p,
+[data-md-color-scheme="slate"] .md-typeset li {
+  color: #dfe9f6; /* paragraph text slightly darker than chrome text */
+}
+
+/* Links and nav items should be brighter and maintain contrast */
+[data-md-color-scheme="slate"] a {
+  color: #9ec7ff;
+}
+
+[data-md-color-scheme="slate"] a:hover {
+  color: #cfe6ff;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: rgba(230,238,248,0.95);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: #cfe6ff;
+  font-weight: 600;
+}
+
+/* Ensure headings have sufficient contrast */
+[data-md-color-scheme="slate"] h1,
+[data-md-color-scheme="slate"] h2,
+[data-md-color-scheme="slate"] h3,
+[data-md-color-scheme="slate"] h4,
+[data-md-color-scheme="slate"] h5,
+[data-md-color-scheme="slate"] h6 {
+  color: #ffffff;
+}
+
+/* Small UI elements (labels, meta) remain readable */
+[data-md-color-scheme="slate"] .md-footer__direction,
+[data-md-color-scheme="slate"] .md-footer__title {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Footer 底部 meta 區域（版權等） */
+.md-footer-meta {
+  background-color: #0033a1;
+}
+
+.md-footer-meta__inner {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Footer 中的連結 */
+.md-footer-meta a {
+  color: #ffffff;
+}
+
+.md-footer-meta a:hover {
+  color: #e0e0e0;
+}
+
+/* ============================================
+   內容區域樣式
+   ============================================ */
+
+/* Link colors in content */
+[data-md-color-scheme="default"] .md-content a {
+  color: #0033a1;
+}
+
+[data-md-color-scheme="default"] .md-content a:hover {
+  color: #002880;
+}
+
+[data-md-color-scheme="slate"] .md-content a {
+  color: #6699ff;
+}
+
+[data-md-color-scheme="slate"] .md-content a:hover {
+  color: #8ab4ff;
+}
+
+/* Button styling */
+.md-button--primary {
+  background-color: #0033a1;
+  border-color: #0033a1;
+  color: #ffffff;
+}
+
+.md-button--primary:hover {
+  background-color: #002880;
+  border-color: #002880;
+}
+
+/* Active navigation items in sidebar */
+.md-nav__link--active {
+  color: #0033a1;
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: #6699ff;
+}
+
+/* Search highlighting - 使用更柔和的焦點效果 */
+.md-search__input:focus {
+  border-color: #0033a1;
+  outline: 2px solid rgba(0, 51, 161, 0.3);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0, 51, 161, 0.1);
+}
+
+/* Header 中的搜尋框焦點樣式 */
+.md-header .md-search__input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Code block accent - 使用中性灰色 */
+.md-typeset code {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Keyboard key styling - 使用中性灰色 */
+.md-typeset kbd {
+  border-color: #999;
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-typeset kbd {
+  border-color: #666;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Scrollbar 樣式 - 使用低調的灰色
+   ============================================ */
+
+/* Webkit 瀏覽器 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark mode scrollbar */
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+[data-md-color-scheme="slate"] * {
+  scrollbar-color: #555 #2d2d2d;
+}

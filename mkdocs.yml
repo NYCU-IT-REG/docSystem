@@ -1,0 +1,107 @@
+site_name: "陽明交大資訊技術服務中心 Wiki"
+site_url: https://docs.it.nycu.edu.tw #TODO: 更改為正式 url
+repo_url: https://github.com/username/repo-name #TODO: 更改為正確 repo url
+
+theme:
+  name: material
+  language: zh-TW
+  favicon: assets/images/logo.svg
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: 切換至深色模式
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: 切換至淺色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+# Navigation
+nav:
+  - 首頁: index.md
+  - HPC 高效能運算服務:
+    - hpc/index.md
+    - 申請系統操作說明:
+      - 概覽: hpc/reg/index.md
+      - 帳號申請: hpc/reg/registration.md
+    - 終端機操作說明:
+      - 概覽: hpc/ssh/index.md
+      - VPN 設定: hpc/network/vpn.md
+      - 無線網路: hpc/network/wireless.md
+      - IP 申請: hpc/network/ip-request.md
+    - 背景 KnowHow:
+      - 概覽: hpc/cloud/index.md
+      - 雲端儲存: hpc/cloud/storage.md
+      - 虛擬主機: hpc/cloud/vm.md
+      - 容器服務: hpc/cloud/container.md
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: zh-TW
+          default: true
+          name: 繁體中文
+          build: true
+          nav_translations:
+            首頁: 首頁
+            HPC 高效能運算服務: 高效能運算服務 (HPC)
+            帳號管理: 帳號管理
+
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            首頁: Home
+            HPC 高效能運算服務: HPC, High Performance Computing
+
+# Footer customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username/repo-name
+      name: GitHub
+    - icon: fontawesome/solid/envelope
+      link: mailto:support@it.nycu.edu.tw
+      name: 聯絡我們
+  generator: false
+
+# Copyright (year will be automatically updated via hooks)
+copyright: Copyright &copy; 國立陽明交通大學資訊技術服務中心
+
+# Extra CSS for custom styling
+extra_css:
+  - assets/stylesheets/custom.css
+  - assets/stylesheets/accessibility.css
+
+# Extra JavaScript for enhanced functionality
+extra_javascript:
+  - assets/javascripts/palette-toggle.js
+
+# Hooks for dynamic content
+hooks:
+  - hooks/copyright_year.py
