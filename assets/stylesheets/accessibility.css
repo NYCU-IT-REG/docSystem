@@ -1,0 +1,278 @@
+/* Skip to main content link - 跳至主要內容連結 */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  display: block;
+  line-height: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 4px 8px;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  z-index: 9999;
+  border-radius: 0 0 3px 0;
+  font-size: 0.75rem;
+  font-weight: normal;
+  outline: 2px solid #4a9eff;
+  outline-offset: 1px;
+  display: block;
+}
+
+/* Enhanced focus indicators - 增強焦點指示器 */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 2px solid #0033a1;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0, 51, 161, 0.15);
+}
+
+/* High contrast mode support - 高對比度模式支援 */
+@media (prefers-contrast: high) {
+  a {
+    text-decoration: underline;
+  }
+
+  button {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support - 減少動畫模式支援 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only content - 僅供螢幕閱讀器內容 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Ensure sufficient color contrast - 確保足夠的顏色對比 */
+a {
+  text-decoration-skip-ink: auto;
+}
+
+/* Font size accessibility - 字體大小無障礙 */
+/* 移除 font-size 和 line-height 設定，使用 Material for MkDocs 的預設值 */
+
+/* 更溫和的方式：僅對內容區域的圖片進行檢查 */
+.md-content img:not([alt]) {
+  outline: 2px dashed orange;
+  outline-offset: 2px;
+}
+
+/* SVG 圖示和裝飾性圖片不需要 alt，排除檢查 */
+.md-header img:not([alt]),
+.md-nav img:not([alt]),
+.md-footer img:not([alt]),
+svg:not([alt]) {
+  outline: none;
+  border: none;
+}
+
+/* Table accessibility - 表格無障礙 */
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+/*
+/* Form accessibility - 表單無障礙
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}*/
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select {
+  border: 2px solid #ccc;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* 表單驗證錯誤樣式 - 排除搜尋框 */
+input:invalid:not([type="search"]),
+textarea:invalid,
+select:invalid {
+  border-color: #d32f2f;
+}
+
+/* 搜尋框即使 invalid 也不顯示錯誤樣式 */
+input[type="search"]:invalid,
+.md-search__input:invalid,
+.md-search__input {
+  border-color: inherit !important;
+}
+
+
+/* Button accessibility - 按鈕無障礙 */
+button {
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 1rem;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Link accessibility - 連結無障礙
+   Scoped to content links to avoid affecting theme UI (navigation, header, tabs, footer).
+   Global `a` was giving nav links a min-height/display that increased sidebar spacing.
+*/
+.md-typeset a,
+.md-content a {
+  min-height: 44px;
+  display: inline-block;
+  padding: 5px 0;
+}
+
+
+/* Focus visible for keyboard navigation - 鍵盤導航焦點可見 */
+*:focus-visible {
+  outline: 2px solid #0033a1;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0, 51, 161, 0.15);
+}
+
+/* Language switcher accessibility - 語言切換器無障礙 */
+.md-select__link:focus {
+  outline: 2px solid #0033a1;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(0, 51, 161, 0.15);
+}
+
+/* Navigation accessibility - 導航無障礙 */
+.md-nav__link:focus {
+  background-color: rgba(0, 51, 161, 0.1);
+  outline: 2px solid #0033a1;
+  //outline-offset: 2px;
+}
+
+/* Search accessibility - 搜尋無障礙 */
+/* 已在 custom.css 中定義，此處註解掉避免重複 */
+/* .md-search__input:focus {
+  outline: 2px solid #0033a1;
+} */
+
+/* Dark mode accessibility - 深色模式無障礙 */
+[data-md-color-scheme="slate"] {
+  /* Ensure sufficient contrast in dark mode */
+}
+
+/* Custom palette toggle button styling */
+/* Removed custom injected palette toggle styling to avoid showing duplicate toggles.
+   If legacy custom toggle appears, hide it to let the theme's native palette UI show.
+*/
+.custom-palette-toggle {
+  display: none !important;
+}
+
+.custom-palette-toggle * {
+  display: none !important;
+}
+
+/* Ensure language selector text color adapts to the current color scheme */
+/* Light mode: use dark text; Dark mode (slate): use light text */
+[data-md-color-scheme="default"] .md-header .md-select__link,
+[data-md-color-scheme="default"] .md-header .md-select__menu,
+[data-md-color-scheme="default"] .md-header .md-select__item,
+[data-md-color-scheme="default"] .md-header .md-select__value,
+[data-md-color-scheme="light"] .md-header .md-select__link,
+[data-md-color-scheme="light"] .md-header .md-select__menu,
+[data-md-color-scheme="light"] .md-header .md-select__item,
+[data-md-color-scheme="light"] .md-header .md-select__value {
+  color: #111 !important;
+}
+
+[data-md-color-scheme="slate"] .md-header .md-select__link,
+[data-md-color-scheme="slate"] .md-header .md-select__menu,
+[data-md-color-scheme="slate"] .md-header .md-select__item,
+[data-md-color-scheme="slate"] .md-header .md-select__value {
+  color: rgba(255,255,255,0.95) !important;
+}
+
+/* Also ensure focus/hover states follow the scheme */
+[data-md-color-scheme="default"] .md-header .md-select__link:focus,
+[data-md-color-scheme="default"] .md-header .md-select__link:hover,
+[data-md-color-scheme="light"] .md-header .md-select__link:focus,
+[data-md-color-scheme="light"] .md-header .md-select__link:hover {
+  color: #000 !important;
+}
+
+[data-md-color-scheme="slate"] .md-header .md-select__link:focus,
+[data-md-color-scheme="slate"] .md-header .md-select__link:hover {
+  color: #fff !important;
+}
+
+/* Print accessibility - 列印無障礙 */
+@media print {
+  .skip-link,
+  .md-header,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+  }
+}
