@@ -7,7 +7,7 @@ edit_uri: edit/main/docs/ # 允許使用者建議編輯
 theme:
   name: material
   language: zh-TW
-  favicon: assets/images/logo.svg
+  favicon: assets/images/favicon.ico
   custom_dir: overrides
   palette:
     - scheme: default

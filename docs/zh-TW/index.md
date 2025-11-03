@@ -2,23 +2,14 @@
 
 這是陽明交通大學資訊技術服務中心的文件中心，提供各種服務指南、技術文件與常見問題解答。
 
-## 快速導覽
+## 主要服務
 
-### 📚 服務指南
-了解我們提供的各項服務與使用方式。
+### HPC 高速運算平台
+提供高效能 GPU 運算服務，協助研究團隊進行 AI 與科學運算
 
-### 🔧 技術文件
-深入的技術資料與實作指南。
-
-### ❓ 常見問題
-常見問題與解決方案。
-
-### 👥 關於我們
-認識資訊技術服務中心團隊。
-
-## 聯絡我們
-
-如有任何問題或建議，歡迎透過以下方式聯絡我們：
-
-- 📧 Email: support@it.nycu.edu.tw
-- 🌐 網站: [https://it.nycu.edu.tw](https://it.nycu.edu.tw)
+- [HPC 服務說明](./hpc/) - 平台規格、申請方式與使用規範
+- [基本操作說明](./hpc/basic.md) - Linux 指令與 Slurm 工作排程系統
+- [容器使用指南](./hpc/container/) - 容器技術介紹與使用教學
+  - [使用 NGC 映像檔](./hpc/container/ngc.md) - 下載 NVIDIA GPU Cloud 容器
+  - [執行容器](./hpc/container/run.md) - Singularity 與 Enroot 使用方式
+  - [製作映像檔](./hpc/container/build-image.md) - 建立自訂容器環境

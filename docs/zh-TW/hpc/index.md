@@ -1,9 +1,21 @@
 # HPC 高速運算平台服務說明
+
 ### 服務說明
 
 - 為推動校內各研究團隊使用資訊中心建置之 HPC 高速運算平台，建立安全且可信賴之運算服務，協助研究團隊進行 AI 與高效能運算相關研究。
 - 平台目前有 5 座 Nvidia DGX 伺服器：兩座配備 8 片 H100 GPU，三座配備 8 片 H200 GPU。
 - 提供獨佔式及佇列式 GPU 服務，滿足不同研究需求與排程模式。
+
+## 使用文件
+
+### 基本操作
+- [基本操作說明](./basic.md) - Linux 指令與 Slurm 工作排程系統使用教學
+
+### 容器使用指南
+- [容器相關](./container/) - 容器技術介紹與使用情境
+  - [使用 NGC 映像檔](./container/ngc.md) - 下載 NVIDIA GPU Cloud 預先建置的容器
+  - [執行容器](./container/run.md) - Singularity 與 Enroot 容器執行方式
+  - [製作映像檔](./container/build-image.md) - 建立自訂容器映像檔
 
 ### 平台規格
 
