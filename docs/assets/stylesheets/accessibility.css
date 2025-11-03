@@ -160,13 +160,6 @@ input[type="search"]:invalid,
   border-color: inherit !important;
 }
 
-/* 更強的覆蓋規則 - 確保搜尋框永不顯示紅框 */
-.md-search__input,
-.md-search__input:focus,
-.md-search__input:invalid,
-.md-search__input:not(:placeholder-shown) {
-  border-color: transparent !important;
-}
 
 /* Button accessibility - 按鈕無障礙 */
 button {
@@ -181,11 +174,17 @@ button:disabled {
   opacity: 0.6;
 }
 
-/* Link accessibility - 連結無障礙 */
-a {
+/* Link accessibility - 連結無障礙
+   Scoped to content links to avoid affecting theme UI (navigation, header, tabs, footer).
+   Global `a` was giving nav links a min-height/display that increased sidebar spacing.
+*/
+.md-typeset a,
+.md-content a {
   min-height: 44px;
   display: inline-block;
+  padding: 5px 0;
 }
+
 
 /* Focus visible for keyboard navigation - 鍵盤導航焦點可見 */
 *:focus-visible {
@@ -205,7 +204,7 @@ a {
 .md-nav__link:focus {
   background-color: rgba(0, 51, 161, 0.1);
   outline: 2px solid #0033a1;
-  outline-offset: 2px;
+  //outline-offset: 2px;
 }
 
 /* Search accessibility - 搜尋無障礙 */
@@ -263,9 +262,6 @@ a {
 [data-md-color-scheme="slate"] .md-header .md-select__link:hover {
   color: #fff !important;
 }
-
-/* Text spacing - 文字間距 */
-/* 移除段落和標題的 margin 設定，使用 Material for MkDocs 的預設值 */
 
 /* Print accessibility - 列印無障礙 */
 @media print {

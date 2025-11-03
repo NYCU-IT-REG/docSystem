@@ -1,6 +1,8 @@
 site_name: "陽明交大資訊技術服務中心 Wiki"
-site_url: https://docs.it.nycu.edu.tw #TODO: 更改為正式 url
-repo_url: https://github.com/username/repo-name #TODO: 更改為正確 repo url
+site_url: https://nycu-it-reg.github.io/docSystem/  # 請替換 YOUR_USERNAME 為你的 GitHub 使用者名稱
+repo_url: https://github.com/nycu-it-reg/docSystem  # 請替換 YOUR_USERNAME 為你的 GitHub 使用者名稱
+repo_name: docSystem
+edit_uri: edit/main/docs/  # 允許使用者建議編輯
 
 theme:
   name: material
@@ -22,7 +24,7 @@ theme:
         name: 切換至淺色模式
   features:
     - navigation.tabs
-    - navigation.sections
+    - navigation.expand
     - navigation.top
     - navigation.footer
     - search.suggest
@@ -38,6 +40,14 @@ nav:
   - 首頁: index.md
   - HPC 高效能運算服務:
       - hpc/index.md
+      - 申請系統 : 
+        - hpc/registration/index.md
+      - 基本操作: hpc/basic.md 
+      - 容器:
+        - 認識容器: hpc/container/index.md
+        - 建製映像: hpc/container/build-image.md
+        - 執行: hpc/container/run.md
+        - Nvidia 映像: hpc/container/ngc.md
 
 plugins:
   - search:
@@ -70,7 +80,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/username/repo-name
+      link: https://github.com/nycu-it-reg/docSystem  # 請替換 YOUR_USERNAME
       name: GitHub
     - icon: fontawesome/solid/envelope
       link: mailto:support@it.nycu.edu.tw
