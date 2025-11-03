@@ -86,15 +86,70 @@
   fill: #ffffff;
 }
 
-/* 搜尋框在 header 中的樣式 */
-.md-search__input {
+/* 搜尋框在 header 中的樣式（收合狀態） */
+.md-header .md-search__input {
   background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
   border: none !important;
 }
 
-.md-search__input::placeholder {
+.md-header .md-search__input::placeholder {
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* Header 中的搜尋圖示保持白色 */
+.md-header .md-search__icon {
+  color: #ffffff;
+}
+
+.md-header .md-search__icon svg {
+  fill: #ffffff;
+}
+
+/* 搜尋框展開時（全頁面模式）的樣式 - 淺色模式 */
+[data-md-color-scheme="default"] .md-search__form {
+  background-color: #ffffff;
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* 搜尋框的放大鏡圖示 - 淺色模式 */
+[data-md-color-scheme="default"] .md-search__icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+[data-md-color-scheme="default"] .md-search__icon svg {
+  fill: rgba(0, 0, 0, 0.54);
+}
+
+/* 搜尋框展開時（全頁面模式）的樣式 - 深色模式 */
+[data-md-color-scheme="slate"] .md-search__form {
+  background-color: #1a1d24;
+}
+
+[data-md-color-scheme="slate"] .md-search__input {
+  color: #ffffff;
+  background-color: #1a1d24;
+}
+
+[data-md-color-scheme="slate"] .md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+/* 搜尋框的放大鏡圖示 - 深色模式 */
+[data-md-color-scheme="slate"] .md-search__icon {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-scheme="slate"] .md-search__icon svg {
+  fill: rgba(255, 255, 255, 0.7);
 }
 
 /* 確保搜尋框在任何狀態下都不顯示錯誤邊框 */
@@ -323,19 +378,28 @@
 }
 
 /* Search highlighting - 使用更柔和的焦點效果 */
-.md-search__input:focus {
+/* Header 中的搜尋框焦點樣式（收合狀態） */
+.md-header .md-search__input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* 搜尋框展開時的焦點樣式 - 淺色模式 */
+[data-md-color-scheme="default"] .md-search__input:focus {
   border-color: #0033a1;
   outline: 2px solid rgba(0, 51, 161, 0.3);
   outline-offset: 2px;
   box-shadow: 0 0 0 3px rgba(0, 51, 161, 0.1);
 }
 
-/* Header 中的搜尋框焦點樣式 */
-.md-header .md-search__input:focus {
-  background-color: rgba(255, 255, 255, 0.25);
-  outline: 2px solid rgba(255, 255, 255, 0.4);
+/* 搜尋框展開時的焦點樣式 - 深色模式 */
+[data-md-color-scheme="slate"] .md-search__input:focus {
+  border-color: #6699ff;
+  outline: 2px solid rgba(102, 153, 255, 0.3);
   outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(102, 153, 255, 0.1);
 }
 
 /* Code block accent - 使用中性灰色 */
