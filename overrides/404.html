@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <script>
+    // Redirect to appropriate language 404 page based on URL path
+    (function() {
+      var path = window.location.pathname;
+
+      // If the original request was under /en/, redirect to English 404 page
+      if (path.startsWith('/en/') && !path.includes('/en/404')) {
+        window.location.replace('/en/404/');
+      }
+    })();
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="md-content__inner md-typeset">
+    <h1>404 — 找不到頁面</h1>
+
+    <p>抱歉,您所請求的頁面不存在或已被移動。</p>
+
+    <p>請檢查網址是否正確,或回到首頁繼續瀏覽:</p>
+
+    <p><a href="/">返回首頁</a></p>
+
+    <hr>
+
+    <p>如需英文版本,請前往 <a href="/en/">English</a>。</p>
+  </div>
+{% endblock %}

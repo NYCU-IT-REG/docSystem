@@ -37,20 +37,7 @@ theme:
 nav:
   - 首頁: index.md
   - HPC 高效能運算服務:
-    - hpc/index.md
-    - 申請系統操作說明:
-      - 概覽: hpc/reg/index.md
-      - 帳號申請: hpc/reg/registration.md
-    - 終端機操作說明:
-      - 概覽: hpc/ssh/index.md
-      - VPN 設定: hpc/network/vpn.md
-      - 無線網路: hpc/network/wireless.md
-      - IP 申請: hpc/network/ip-request.md
-    - 背景 KnowHow:
-      - 概覽: hpc/cloud/index.md
-      - 雲端儲存: hpc/cloud/storage.md
-      - 虛擬主機: hpc/cloud/vm.md
-      - 容器服務: hpc/cloud/container.md
+      - hpc/index.md
 
 plugins:
   - search:
@@ -99,8 +86,6 @@ extra_css:
   - assets/stylesheets/accessibility.css
 
 # Extra JavaScript for enhanced functionality
-extra_javascript:
-  - assets/javascripts/palette-toggle.js
 
 # Hooks for dynamic content
 hooks:

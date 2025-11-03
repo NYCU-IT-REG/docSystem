@@ -128,12 +128,12 @@ table {
 th {
   text-align: left;
 }
-
-/* Form accessibility - 表單無障礙 */
+/*
+/* Form accessibility - 表單無障礙
 label {
   display: block;
   margin-bottom: 0.25rem;
-}
+}*/
 
 input[type="text"],
 input[type="email"],
@@ -220,63 +220,15 @@ a {
 }
 
 /* Custom palette toggle button styling */
+/* Removed custom injected palette toggle styling to avoid showing duplicate toggles.
+   If legacy custom toggle appears, hide it to let the theme's native palette UI show.
+*/
 .custom-palette-toggle {
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  z-index: 1200;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 6px;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: rgba(255,255,255,0.9);
-  color: #111;
+  display: none !important;
 }
 
-.custom-palette-toggle:focus {
-  outline: 2px solid #4a9eff;
-  box-shadow: 0 0 0 4px rgba(74,158,255,0.12);
-}
-
-.custom-palette-toggle__icon.is-dark::before {
-  content: '\2600'; /* sun */
-}
-
-.custom-palette-toggle__icon.is-light::before {
-  content: '\263D'; /* moon */
-}
-
-@media (prefers-color-scheme: dark) {
-  .custom-palette-toggle {
-    background: rgba(20,20,20,0.85);
-    color: #fff;
-    border-color: rgba(255,255,255,0.08);
-  }
-}
-
-/* When placed inside the header (inline with language selector), override fixed positioning */
-.md-header .custom-palette-toggle,
-.md-header__inner .custom-palette-toggle {
-  position: relative;
-  right: auto;
-  top: auto;
-  margin-left: 0.5rem;
-  width: auto;
-  height: auto;
-  min-width: 40px;
-  padding: 0.5rem;
-  border-radius: 4px;
-  background: transparent;
-  border: none;
-  color: inherit;
-}
-
-.md-header .custom-palette-toggle .custom-palette-toggle__icon,
-.md-header__inner .custom-palette-toggle .custom-palette-toggle__icon {
-  font-size: 1rem;
+.custom-palette-toggle * {
+  display: none !important;
 }
 
 /* Ensure language selector text color adapts to the current color scheme */
