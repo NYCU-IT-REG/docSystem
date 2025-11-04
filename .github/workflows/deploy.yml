@@ -3,16 +3,14 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - main  # 當推送到 main 分支時觸發
-  workflow_dispatch:  # 允許手動觸發
+      - main
+  workflow_dispatch:
 
-# 設定 GITHUB_TOKEN 的權限
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# 確保同時只有一個部署在執行
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -24,13 +22,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 獲取完整的 git 歷史記錄（用於顯示最後更新時間）
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-          cache: 'pip'  # 快取 pip 套件以加速建置
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
